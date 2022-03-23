@@ -8,10 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class alerts {
     public static <webElement> void main(String[] args) throws InterruptedException {
 
-
         System.setProperty("webdriver.chrome.driver", "Driver/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-
 
 //navigate
 
@@ -26,14 +24,13 @@ public class alerts {
 //switch the focus of selenium
 
         Alert simpleAlert=driver.switchTo().alert();
-
         simpleAlert.accept();
 
 //handeling confirmation alert
 //enabling the confirmation alert
         driver.findElement(By.cssSelector("button#confirm")).click();
 
-        //switch the focus
+//switch the focus
 
         Alert confirmationAlert=driver.switchTo().alert();
 
@@ -49,21 +46,16 @@ public class alerts {
 
         driver.findElement(By.cssSelector("button#prompt")).click();
 
-
 //switch focus
 
         Alert promptAlert=driver.switchTo().alert();
 
-
-
 //send some keys to this alert
 
         promptAlert.sendKeys("hello we need sleep");
-
 //accept
 
         promptAlert.accept();
-
 
     }
 }
